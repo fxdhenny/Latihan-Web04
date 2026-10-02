@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPKPT Politeknik ATMI Surakarta - Kampus Aman</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        /* Custom Styling agar tetap memiliki karakter namun lebih modern */
+        .hero-section {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            color: white;
+        }
+        .btn-floating-sos {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background-color: #0d47a1;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#main-navbar" tabindex="0">
+
+    <!-- Tombol SOS Melayang -->
+    <a href="https://wa.me/6285746951203" class="btn btn-danger btn-lg px-4 py-3 fw-bold btn-floating-sos d-flex align-items-center gap-2" target="_blank">
+        <i class="bi bi-telephone-fill"></i> Darurat PPKPT
+    </a>
+
+    <!-- Header / Navbar (Dibuat fixed-top agar navigasi one-page lebih mudah) -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary d-flex align-items-center gap-2" href="#home">
+                <i class="bi bi-shield-check fs-3"></i>
+                PPKPT ATMI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav fw-medium gap-md-2">
+                    <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jenis-kekerasan">Bentuk Kekerasan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#alur-lapor">Alur Lapor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lapor">Form Pengaduan</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section d-flex align-items-center text-center vh-100 mt-5">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">Kampus Aman Dimulai dari Kita</h1>
+            <p class="lead mb-4 mx-auto" style="max-width: 700px;">
+                Bersama Ciptakan Kampus Politeknik ATMI Surakarta yang aman & bebas dari kekerasan. Jadilah Upstander, Pahami Batasan, dan Normalize Your Voice.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#lapor" class="btn btn-danger btn-lg rounded-pill px-4 fw-bold">Lapor Sekarang</a>
+                <a href="#jenis-kekerasan" class="btn btn-outline-light btn-lg rounded-pill px-4 fw-bold">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jenis Kekerasan Section (Cocok untuk disambungkan ke Database nantinya) -->
+    <section id="jenis-kekerasan" class="py-5 bg-light text-center">
+        <div class="container py-5">
+            <h2 class="section-title h1">Bentuk Kekerasan</h2>
+            <p class="fs-5 mb-5 text-muted">Mengenali bentuk-bentuk kekerasan adalah langkah awal pencegahan.</p>
+
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center text-start">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-3">
+                        <div class="card-body">
+                            <i class="bi bi-gender-ambiguous display-4 text-danger mb-3"></i>
+                            <h5 class="card-title fw-bold">Seksual</h5>
+                            <p class="card-text text-muted small">Tindakan pelecehan atau pemaksaan yang bernuansa seksual.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-3">
+                        <div class="card-body">
+                            <i class="bi bi-bandaid display-4 text-danger mb-3"></i>
+                            <h5 class="card-title fw-bold">Fisik</h5>
+                            <p class="card-text text-muted small">Tindakan yang melukai fisik atau ancaman keselamatan.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-3">
+                        <div class="card-body">
+                            <i class="bi bi-people display-4 text-danger mb-3"></i>
+                            <h5 class="card-title fw-bold">Perundungan</h5>
+                            <p class="card-text text-muted small">Tindakan intimidasi atau *bullying* berulang terhadap seseorang.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-3">
+                        <div class="card-body">
+                            <i class="bi bi-slash-circle display-4 text-danger mb-3"></i>
+                            <h5 class="card-title fw-bold">Diskriminasi</h5>
+                            <p class="card-text text-muted small">Perlakuan tidak adil berdasarkan SARA atau kondisi tertentu.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-3">
+                        <div class="card-body">
+                            <i class="bi bi-person-exclamation display-4 text-danger mb-3"></i>
+                            <h5 class="card-title fw-bold">Psikis</h5>
+                            <p class="card-text text-muted small">Tindakan yang menyerang mental dan psikologis korban.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alur Pelaporan Section -->
+    <section id="alur-lapor" class="py-5 bg-white text-center">
+        <div class="container py-5">
+            <h2 class="section-title h1">Alur Pelaporan PPKPT</h2>
+            
+            <div class="row align-items-center text-start mt-4">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h3 class="fw-bold mb-4"><span class="text-danger">NO MEANS NO!</span><br>Speak Up & Jadilah Upstander</h3>
+                    <p class="fs-5 text-muted">Satgas Pencegahan & Penanganan Kekerasan di Lingkungan Perguruan Tinggi siap mendampingi Anda. Jangan takut untuk melapor jika Anda melihat atau mengalami kejadian.</p>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-group list-group-flush shadow-sm rounded-3">
+                        <li class="list-group-item p-4">
+                            <h5 class="fw-bold text-primary"><i class="bi bi-1-circle-fill me-2"></i> 1. Kejadian</h5>
+                            <p class="mb-0 text-muted ms-4">Terdapat insiden kekerasan di lingkungan kampus.</p>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h5 class="fw-bold text-primary"><i class="bi bi-2-circle-fill me-2"></i> 2. Pelaporan</h5>
+                            <ul class="text-muted mt-2">
+                                <li><strong>Langsung:</strong> Secara lisan melapor ke petugas PPKPT.</li>
+                                <li><strong>Tidak Langsung:</strong> Melalui orang lain atau media komunikasi.</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h5 class="fw-bold text-primary"><i class="bi bi-3-circle-fill me-2"></i> 3. Tindak Lanjut Satgas</h5>
+                            <p class="mb-0 text-muted ms-4">Pemeriksaan, verifikasi, dan pengolahan data secara rahasia dan aman oleh tim Satgas PPKPT.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Lapor Section (Cocok untuk disambungkan ke Database) -->
+    <section id="lapor" class="py-5" style="background-color: #e3f2fd;">
+        <div class="container py-5 text-center">
+            <h2 class="section-title h1">Layanan Pengaduan</h2>
+            <p class="fs-5 mb-5 text-muted">Hubungi Satgas PPKPT atau tinggalkan pesan laporan Anda di bawah ini (Kerahasiaan Terjamin).</p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg border-0 rounded-4 text-start">
+                        <div class="card-body p-5">
+                            <div class="alert alert-info mb-4" role="alert">
+                                <i class="bi bi-info-circle-fill me-2"></i> Hotline PPKPT Admin: <strong>0857-4695-1203</strong>
+                            </div>
+                            <!-- Form Laporan -->
+                            <form>
+                                <div class="row mb-3">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <label class="form-label fw-bold">Nama Anda (Opsional)</label>
+                                        <input type="text" class="form-control form-control-lg bg-light" placeholder="Samarkan jika ingin anonim">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold">Kontak / Email</label>
+                                        <input type="email" class="form-control form-control-lg bg-light" placeholder="Agar tim dapat menghubungi Anda">
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Deskripsi Laporan</label>
+                                    <textarea class="form-control form-control-lg bg-light" rows="5" placeholder="Ceritakan detail kejadian secara kronologis..." style="resize: none;" required></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg fw-bold py-3">Kirim Laporan Rahasia</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white" style="background-color: #0d47a1;">
+        <div class="container">
+            <p class="mb-0 fw-medium">&copy; 2026 PPKPT Politeknik ATMI Surakarta. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
